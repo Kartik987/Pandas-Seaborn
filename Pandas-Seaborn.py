@@ -2,6 +2,15 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
-print(pd.Series([1,2], index=[1,2]))
-print(pd.Series([1,2], index=[1,2]))
-print(pd.Series([1,2], index=[1,2]))
+
+list = [1,2,3,4,5,6,7,8,9,10]
+
+ser =pd.Series(list)
+
+print(ser)
+print(ser[:6])
+# Position based accessing
+print(ser[1:6])
+# index based accessing
+print(ser[6])
+
