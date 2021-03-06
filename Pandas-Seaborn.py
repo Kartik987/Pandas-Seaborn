@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import seaborn as sns
-
+import matplotlib.pyplot as plt
 
 print("Example 1")
 
@@ -60,5 +60,26 @@ a1 = pd.Series([200,300,400,np.nan], index=['a','b','c','d'])
 a2= pd.Series([40,150,310,100], index=['a','g','c','d'])
 
 print(a1.add(a2))
+print(a1.align(a2)) # creates two tuples with each one containing the extra elements from the other series
 
-print(a1.align(a2))
+# sns.histplot(titanic.age, kde=True)
+# plt.show()
+
+# g = sns.FacetGrid(titanic, row='survived', col='class')
+# g.map(sns.histplot, "age")
+# plt.show()
+
+# # Heat map shows us the pearson correlation coefficient columns and rows values.
+# # Pandas dataframe object consist of a corr() method which will calculates the coefficient values.
+# sns.heatmap(titanic.corr(), annot=True, fmt=".2f")
+# plt.show()
+
+# combination of data frames
+
+df1 = pd.DataFrame({'a': [1,2,3,4,5,6], 'b':[9,10,11,12,13,14]})
+df2 = pd.DataFrame({'b': [2,3,4,5,6,7,8]})
+
+print(pd.concat([df1,df2]))   
+print(df1.append(df2))   # both shows the same result
+
+
