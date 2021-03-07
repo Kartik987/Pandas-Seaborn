@@ -65,14 +65,14 @@ print(a1.align(a2)) # creates two tuples with each one containing the extra elem
 # sns.histplot(titanic.age, kde=True)
 # plt.show()
 
-# g = sns.FacetGrid(titanic, row='survived', col='class')
-# g.map(sns.histplot, "age")
-# plt.show()
+g = sns.FacetGrid(titanic, row='survived', col='class')
+g.map(sns.histplot, "age")
+plt.show()
 
-# # Heat map shows us the pearson correlation coefficient columns and rows values.
-# # Pandas dataframe object consist of a corr() method which will calculates the coefficient values.
-# sns.heatmap(titanic.corr(), annot=True, fmt=".2f")
-# plt.show()
+# Heat map shows us the pearson correlation coefficient columns and rows values.
+# Pandas dataframe object consist of a corr() method which will calculates the coefficient values.
+sns.heatmap(titanic.corr(), annot=True, fmt=".2f")
+plt.show()
 
 # combination of data frames
 
