@@ -83,3 +83,12 @@ print(pd.concat([df1,df2]))
 print(df1.append(df2))   # both shows the same result
 
 
+# Group By 
+
+bins = [0, 12, 17, 60, np.inf]
+labels = ['child', 'teenager', 'adult', 'elder']
+age_groups = pd.cut(titanic.age, bins, labels=labels)
+titanic['age_group'] = age_groups
+groups = titanic.groupby(['age_group', 'alone'])
+
+print(groups.size())
